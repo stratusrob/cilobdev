@@ -32,7 +32,7 @@ $(document).ready(function() {
        animation: 'fade',
 		pagination: false,
 		hashchange: false,
-	   play: true,
+	   play: 10000,
     });
 	
 	// Nav 
