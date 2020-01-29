@@ -270,9 +270,9 @@ var fx = {
       display: 'block'
     });
 
-    $outgoing.animate({
-      opacity: 0
-  });
+  //   $outgoing.animate({
+  //     opacity: 0
+  // });
 
     if (orientation.outgoing_slide >= 0) {
       that.$control.animate({
