@@ -278,9 +278,7 @@ var fx = {
         zIndex: 2,
         display: 'block'
     },
-    $outgoing.animate({
-      opacity: 0
-  });
+   
       that.options.animation_speed,
       that.options.animation_easing,
       function() {
