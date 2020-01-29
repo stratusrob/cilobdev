@@ -270,10 +270,16 @@ var fx = {
       display: 'block'
     });
 
+    $outgoing.animate({
+      opacity: 0
+  });
+
     if (orientation.outgoing_slide >= 0) {
-      $outgoing.animate({
-        opacity: 0
-      },
+      that.$control.animate({
+        opacity: 1,
+        zIndex: 2,
+        display: 'block'
+    },
       that.options.animation_speed,
       that.options.animation_easing,
       function() {
