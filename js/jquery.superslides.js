@@ -270,7 +270,7 @@ var fx = {
       display: 'block'
     });
 
-    // if (orientation.outgoing_slide >= 0) {
+    if (orientation.outgoing_slide >= 0) {
       $outgoing.animate({
         opacity: 0
       },
@@ -293,12 +293,12 @@ var fx = {
 
         complete();
       });
-    // } else {
-    //   $target.css({
-    //     zIndex: 2
-    //   });
-    //   complete();
-    // }
+    } else {
+      $target.css({
+        zIndex: 2
+      });
+      complete();
+    }
   }
 };
 
