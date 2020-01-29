@@ -10,6 +10,7 @@ Superslides = function(el, options) {
     play: false,
     animation_speed: 5000,
     animation_easing: 'swing',
+    fade_in_first_slide: false,
     animation: 'slide',
     inherit_width_from: window,
     inherit_height_from: window,
@@ -629,7 +630,11 @@ Superslides.prototype = {
       if (!that.init) {
         that.$el.trigger('init.slides');
         that.init = true;
-        that.$container.fadeIn('fast');
+        if(that.options.fade_in_first_slide) {
+          that.$container.fadeIn('fast');
+        } else {
+          that.$container.show();
+        }
       }
     });
   }
