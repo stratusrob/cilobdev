@@ -270,7 +270,7 @@ var fx = {
         display: 'block'
     });
     $outgoing.animate({
-        opacity: 0
+    //    opacity: 0
     });
 
 //    if (orientation.outgoing_slide >= 0) {
