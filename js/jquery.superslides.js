@@ -283,11 +283,11 @@ var fx = {
           });
 
           // if (orientation.outgoing_slide >= 0) {
-          //   $children.eq(orientation.outgoing_slide).css({
-          //     opacity: 1,
-          //     display: 'none',
-          //     zIndex: 0
-          //   });
+            $children.eq(orientation.outgoing_slide).css({
+              opacity: 1,
+              display: 'none',
+              zIndex: 0
+            });
           // }
         }
 
