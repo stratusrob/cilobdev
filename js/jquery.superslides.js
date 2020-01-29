@@ -263,14 +263,14 @@ var fx = {
             $children = that.$container.children(),
             $outgoing = $children.eq(orientation.outgoing_slide),
             $target = $children.eq(orientation.upcoming_slide);
-    // alert(orientation.upcoming_slide);
+    alert(orientation.upcoming_slide);
     $target.css({
         left: this.width,
         opacity: 1,
         display: 'block'
     });
     $outgoing.animate({
-    //    opacity: 0
+        opacity: 0
     });
 
 //    if (orientation.outgoing_slide >= 0) {
