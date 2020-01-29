@@ -269,12 +269,10 @@ var fx = {
         opacity: 1,
         display: 'block'
     });
-
-    if (orientation.outgoing_slide >= 1) {
+    
     $outgoing.animate({
         opacity: 0
     });
-  }
 
 //    if (orientation.outgoing_slide >= 0) {
     that.$control.animate({
