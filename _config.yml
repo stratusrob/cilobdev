@@ -1,0 +1,29 @@
+# My variables
+name: City Island Lobster House
+description: City Island Lobster House
+google_verification: null
+future: true
+encoding: UTF-8
+
+#baseurl: "/" # the subpath of your site, e.g. /blog
+#url: "staging.cilobsterhouse.com" # the base hostname & protocol for your site
+baseurl:
+url: "https://cilobsterhouse.com/"
+
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
+
+
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge

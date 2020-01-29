@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<section id="main-container" class="change-bg menu">
+	<section id="main-wrapper">
+		<div class="inner-page">
+			<div class="header">
+				<div class="auto">
+					<div class="logo bp-ab"><a href="{{ site.baseurl }}/" title="Go to home"><img src="{{ site.baseurl }}/images/page_template/logo.png" width="291" height="74" alt="website logo" title=""/></a></div>
+					<div class="reservation-btn fl" id="mobile-reservation"></div>
+
+					{% include reserve-popup.html %}
+					
+					<div class="mobile-burger-menu fr"><img src="{{ site.baseurl }}/images/page_template/burger_menu.png" width="40" height="30" alt="burger menu icon" title=""/></div>
+					<div class="nav fr">
+
+						{% include nav.html %}
+						
+
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+<div class="bar-holder auto2">
+				<div class="inner-holder">
+					<h1>
+					<ul id="nav">
+					<li><a class="menux" href="index.html">Menu</a></li>
+        			<li><a class="menux" href="bar.html">The Bar</a></li>
+        
+        
+    				</ul></h1>
+					
+					<h2 class="download-menu">Download our Menu: <a href="http://cilobsterhouse.com/assets/CILOdineinFINOUT.pdf">Page 1</a> | <a href="http://cilobsterhouse.com/assets/CILOdineinFININ.pdf">Page 2</a></h2>
+					
+					<div id="content-load">
+					<p class="bar-top"></p>
+
+					<!-- <p><center>Lunch at the Lobster House Restaurant is served Monday thru Saturday from 11:30am thru 3:00pm. Ordering from our regular menu is permitted during lunch hours. All lunch entrees’ are served with soup or salad. Choice of french fries, baked potato, rice or linguine, coffee or tea and complimentary dessert of the day.</p></center><br> -->
+
+					
+					<div class="menu-col fl">
+						{% assign half_the_food = how_much_food | divided_by:2 %}
+						  <div style="display:none;">{{ half_the_food }}</div>
+							{% assign current_food_section = "zzz" %}
+							{% for food in site.data.menu %}
+						  <div style="display:none;">{% increment how_much_food_shown %}</div>
+							{% if how_much_food_shown == 81 %}
+					  </div>
+					  <div class="menu-col fr">
+						{% endif %}
+						{% if current_food_section == food.Section %}
+						  <ul class="menu-alt-row">
+							<li style="display: -webkit-flex; display: flex;"><span style="display:inline-block; padding-right:5px;">{{food.Entry}}</span><span class="dotted2"></span><span style="padding-left:5px;" class="fr">{{food.Price}}</span><div class="clr"></div></li>
+							<li><p>{{food.Blurb}}</p></li>
+						  </ul>
+						  {% assign current_food_section = {{food.Section}} %}
+						  </ul>
+						{% else %}
+						  <h2>{{food.Section}}</h2>
+							<ul class="menu-alt-row">
+							  <li style="display: -webkit-flex; display: flex;"><span style="display:inline-block; padding-right:5px;">{{food.Entry}}</span><span class="dotted2"></span><span style="padding-left:5px;" class="fr">{{food.Price}}</span><div class="clr"></div></li>
+							  <li><p>{{food.Blurb}}</p></li>
+							</ul>
+							{% assign current_food_section = {{food.Section}} %}
+						{% endif %}
+					  {% endfor %}
+					  
+					
+					</div> 
+				
+				</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+
+{% include footer.html %}

@@ -1,0 +1,28 @@
+<footer>
+	<div class="footer bp-center">
+		<p>copyright {{ site.time | date: "%Y" }}. city island lobster house. 691 bridge street city island, NY 10464. 718-885-1459</p>
+	</div>
+</footer>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+<script>window.jQuery || document.write('<script src="{{ site.baseurl }}/js/lib/jquery.min.js"><\/script>')</script>
+<script src="{{ site.baseurl }}/js/plugins.js"></script>
+<script src="{{ site.baseurl }}/js/custom.js"></script>
+<script src="{{ site.baseurl }}/js/jquery.superslides.js"></script>
+<script src="{{ site.baseurl }}/js/for-desktop.js"></script>
+<script src="{{ site.baseurl }}/js/js.js"></script>
+<script>
+        (function () {
+            var NO_REDIRECT = 'noredirect'; // cookie to prevent redirect
+
+         	if (isMobile.any) {
+
+            	document.getElementById('mobile-reservation').innerHTML = '<a href="tel:7188851459">Make a Reservation</a>';
+
+            } else {
+
+            	document.getElementById('mobile-reservation').innerHTML = '<a href="#0" class="cd-popup-trigger">Make a Reservation</a>';
+            }
+        })();
+    </script>
+</body>
+</html>
