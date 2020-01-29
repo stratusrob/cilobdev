@@ -260,57 +260,46 @@ var fx = {
   },
   fade: function(orientation, complete) {
     var that = this,
-            $children = that.$container.children(),
-            $outgoing = $children.eq(orientation.outgoing_slide),
-            $target = $children.eq(orientation.upcoming_slide);
-    alert(orientation.upcoming_slide);
+        $children = that.$container.children(),
+        $outgoing = $children.eq(orientation.outgoing_slide),
+        $target = $children.eq(orientation.upcoming_slide);
+
     $target.css({
-        left: this.width,
-        opacity: 1,
-        display: 'block'
+      left: this.width,
+      opacity: 1,
+      display: 'block'
     });
-    $outgoing.animate({
+
+    // if (orientation.outgoing_slide >= 0) {
+      $outgoing.animate({
         opacity: 0
-    });
+      },
+      that.options.animation_speed,
+      that.options.animation_easing,
+      function() {
+        if (that.size() > 1) {
+          $children.eq(orientation.upcoming_slide).css({
+            zIndex: 2
+          });
 
-//    if (orientation.outgoing_slide >= 0) {
-    that.$control.animate({
-        opacity: 1,
-        zIndex: 2,
-        display: 'block'
-    },
-//    $outgoing.animate({
-//        opacity: 0
-//      },
-    that.options.animation_speed,
-            that.options.animation_easing,
-            function() {
-                if (that.size() > 1) {
-                    that.$control.css({
-                        left: -that.width
-                    });
-                    $children.eq(orientation.upcoming_slide).css({
-                        zIndex: 2
-                    });
-
-                    if (orientation.outgoing_slide >= 0) {
-                        $children.eq(orientation.outgoing_slide).css({
-                            opacity: 1,
-                            display: 'none',
-                            zIndex: 0
-                        });
-                    }
-                }
-
-                complete();
+          if (orientation.outgoing_slide >= 0) {
+            $children.eq(orientation.outgoing_slide).css({
+              opacity: 1,
+              display: 'none',
+              zIndex: 0
             });
-//    } else {
-//      $target.css({
-//        zIndex: 2
-//      });
-//       complete();
-//    }
-}
+          }
+        }
+
+        complete();
+      });
+    // } else {
+    //   $target.css({
+    //     zIndex: 2
+    //   });
+    //   complete();
+    // }
+  }
 };
 
 fx = $.extend(fx, $.fn.superslides.fx);
